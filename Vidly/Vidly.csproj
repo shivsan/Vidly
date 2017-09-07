@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -115,12 +123,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -171,6 +173,36 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Migrations\201709060849543_InitialModel.cs" />
+    <Compile Include="Migrations\201709060849543_InitialModel.Designer.cs">
+      <DependentUpon>201709060849543_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061337126_AddMovieYear.cs" />
+    <Compile Include="Migrations\201709061337126_AddMovieYear.Designer.cs">
+      <DependentUpon>201709061337126_AddMovieYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061349017_AddMovieCast.cs" />
+    <Compile Include="Migrations\201709061349017_AddMovieCast.Designer.cs">
+      <DependentUpon>201709061349017_AddMovieCast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061350382_AddMovieCast1.cs" />
+    <Compile Include="Migrations\201709061350382_AddMovieCast1.Designer.cs">
+      <DependentUpon>201709061350382_AddMovieCast1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061353291_AddMovieCast2.cs" />
+    <Compile Include="Migrations\201709061353291_AddMovieCast2.Designer.cs">
+      <DependentUpon>201709061353291_AddMovieCast2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061400159_PopulateCast.cs" />
+    <Compile Include="Migrations\201709061400159_PopulateCast.Designer.cs">
+      <DependentUpon>201709061400159_PopulateCast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709061408159_ApplyConstraints.cs" />
+    <Compile Include="Migrations\201709061408159_ApplyConstraints.Designer.cs">
+      <DependentUpon>201709061408159_ApplyConstraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cast.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,6 +272,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +285,29 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709060849543_InitialModel.resx">
+      <DependentUpon>201709060849543_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061337126_AddMovieYear.resx">
+      <DependentUpon>201709061337126_AddMovieYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061349017_AddMovieCast.resx">
+      <DependentUpon>201709061349017_AddMovieCast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061350382_AddMovieCast1.resx">
+      <DependentUpon>201709061350382_AddMovieCast1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061353291_AddMovieCast2.resx">
+      <DependentUpon>201709061353291_AddMovieCast2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061400159_PopulateCast.resx">
+      <DependentUpon>201709061400159_PopulateCast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709061408159_ApplyConstraints.resx">
+      <DependentUpon>201709061408159_ApplyConstraints.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -271,6 +328,8 @@
           <DevelopmentServerPort>60515</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:60515/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:60515/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

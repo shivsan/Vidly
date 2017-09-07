@@ -7,7 +7,7 @@ using Vidly.Models;
 
 namespace Vidly.Controllers
 {
-    [RoutePrefix("movies")]
+    //[RoutePrefix("movies")]
     public class MoviesController : Controller
     {
         // GET: Movies
@@ -15,13 +15,21 @@ namespace Vidly.Controllers
         //{
         //    return View();
         //}
-        
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if (pageIndex.HasValue)
-                pageIndex = 1;
+        private ApplicationDbContext _dBContext;
 
-            return Content(string.Format("{0}{1}", pageIndex, sortBy));
+        public MoviesController()
+        {
+            _dBContext = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool dispose)
+        {
+            _dBContext.Dispose();
+        }
+
+        public ActionResult Index()
+        {
+            return View(_dBContext.Movies);
         }
 
         [Route("releases/{year:regex(\\d{4})}/{genre:regex(\\w+)}")]
@@ -35,7 +43,12 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            return Content("id="+id);
+            return Content("id=" + id);
+        }
+
+        public ActionResult Details(int id)
+        {
+            return View(_dBContext.Movies.FirstOrDefault(m => m.Id.Equals(id)) ?? null);
         }
 
         public ActionResult Random()
