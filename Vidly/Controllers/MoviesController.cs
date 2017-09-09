@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -29,7 +30,7 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            return View(_dBContext.Movies);
+            return View(_dBContext.Movies.Include(c=>c.Cast));
         }
 
         [Route("releases/{year:regex(\\d{4})}/{genre:regex(\\w+)}")]

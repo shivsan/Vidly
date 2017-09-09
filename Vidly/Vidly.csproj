@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -201,8 +202,47 @@
     <Compile Include="Migrations\201709061408159_ApplyConstraints.Designer.cs">
       <DependentUpon>201709061408159_ApplyConstraints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709071418423_AddCustomer.cs" />
+    <Compile Include="Migrations\201709071418423_AddCustomer.Designer.cs">
+      <DependentUpon>201709071418423_AddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071422255_AddCustomer1.cs" />
+    <Compile Include="Migrations\201709071422255_AddCustomer1.Designer.cs">
+      <DependentUpon>201709071422255_AddCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071431141_AddCustomer2.cs" />
+    <Compile Include="Migrations\201709071431141_AddCustomer2.Designer.cs">
+      <DependentUpon>201709071431141_AddCustomer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071441463_AddCustomerBirthDate.cs" />
+    <Compile Include="Migrations\201709071441463_AddCustomerBirthDate.Designer.cs">
+      <DependentUpon>201709071441463_AddCustomerBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709071444308_EditBirthDateNullable.cs" />
+    <Compile Include="Migrations\201709071444308_EditBirthDateNullable.Designer.cs">
+      <DependentUpon>201709071444308_EditBirthDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081748542_AddGenre1.cs" />
+    <Compile Include="Migrations\201709081748542_AddGenre1.Designer.cs">
+      <DependentUpon>201709081748542_AddGenre1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081817332_AddGenre2.cs" />
+    <Compile Include="Migrations\201709081817332_AddGenre2.Designer.cs">
+      <DependentUpon>201709081817332_AddGenre2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081825512_AddGenre0.cs" />
+    <Compile Include="Migrations\201709081825512_AddGenre0.Designer.cs">
+      <DependentUpon>201709081825512_AddGenre0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709081826593_AddGenre3.cs" />
+    <Compile Include="Migrations\201709081826593_AddGenre3.Designer.cs">
+      <DependentUpon>201709081826593_AddGenre3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cast.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\MemberShipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -274,6 +314,11 @@
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,6 +352,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709061408159_ApplyConstraints.resx">
       <DependentUpon>201709061408159_ApplyConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071418423_AddCustomer.resx">
+      <DependentUpon>201709071418423_AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071422255_AddCustomer1.resx">
+      <DependentUpon>201709071422255_AddCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071431141_AddCustomer2.resx">
+      <DependentUpon>201709071431141_AddCustomer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071441463_AddCustomerBirthDate.resx">
+      <DependentUpon>201709071441463_AddCustomerBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709071444308_EditBirthDateNullable.resx">
+      <DependentUpon>201709071444308_EditBirthDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081748542_AddGenre1.resx">
+      <DependentUpon>201709081748542_AddGenre1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081817332_AddGenre2.resx">
+      <DependentUpon>201709081817332_AddGenre2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081825512_AddGenre0.resx">
+      <DependentUpon>201709081825512_AddGenre0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081826593_AddGenre3.resx">
+      <DependentUpon>201709081826593_AddGenre3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
