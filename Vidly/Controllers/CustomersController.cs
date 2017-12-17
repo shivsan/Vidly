@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Vidly.Filters;
 using Vidly.Models;
 
 namespace Vidly.Controllers
@@ -46,6 +47,7 @@ namespace Vidly.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ErrorFilter]
         public ActionResult Create([Bind(Include = "Id,Firstname,Lastname,MemberShipTypeId")] Customer customer)
         {
             if (ModelState.IsValid)

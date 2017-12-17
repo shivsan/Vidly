@@ -6,11 +6,15 @@
 
 <h2>Create</h2>
 
-        @using (Html.BeginForm("Create", "MyCustomer"))
+        @using (Html.BeginForm("New", "MyCustomer"))
         {
             <div class="form-group">
                 @Html.LabelFor(m=>m.Name, new {@class="form-label" })
                 @Html.TextBoxFor(m => m.Name, new { @class="form-control"})
+            </div>
+            
+            <div>
+                <button type="submit">Submit</button>
             </div>
         }
 

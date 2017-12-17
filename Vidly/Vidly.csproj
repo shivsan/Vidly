@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\MyCustomerController.cs" />
+    <Compile Include="Filters\ErrorFilter.cs" />
     <Compile Include="Migrations\201709060849543_InitialModel.cs" />
     <Compile Include="Migrations\201709060849543_InitialModel.Designer.cs">
       <DependentUpon>201709060849543_InitialModel.cs</DependentUpon>
@@ -240,9 +241,27 @@
     <Compile Include="Migrations\201709081826593_AddGenre3.Designer.cs">
       <DependentUpon>201709081826593_AddGenre3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709101625198_AddMyCustomer.cs" />
+    <Compile Include="Migrations\201709101625198_AddMyCustomer.Designer.cs">
+      <DependentUpon>201709101625198_AddMyCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161129274_Added event.cs" />
+    <Compile Include="Migrations\201712161129274_Added event.Designer.cs">
+      <DependentUpon>201712161129274_Added event.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161133301_Added error model.cs" />
+    <Compile Include="Migrations\201712161133301_Added error model.Designer.cs">
+      <DependentUpon>201712161133301_Added error model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712161137182_Error model update.cs" />
+    <Compile Include="Migrations\201712161137182_Error model update.Designer.cs">
+      <DependentUpon>201712161137182_Error model update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cast.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Error.cs" />
+    <Compile Include="Models\EventLog.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MemberShipType.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -325,9 +344,11 @@
     <Content Include="Views\MyCustomer\Index.cshtml" />
     <Content Include="Views\MyCustomer\_Details.cshtml" />
     <Content Include="Views\MyCustomer\Create.cshtml" />
+    <Content Include="Views\MyCustomer\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MyCustomer\Partial\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -385,6 +406,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709081826593_AddGenre3.resx">
       <DependentUpon>201709081826593_AddGenre3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709101625198_AddMyCustomer.resx">
+      <DependentUpon>201709101625198_AddMyCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161129274_Added event.resx">
+      <DependentUpon>201712161129274_Added event.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161133301_Added error model.resx">
+      <DependentUpon>201712161133301_Added error model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161137182_Error model update.resx">
+      <DependentUpon>201712161137182_Error model update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

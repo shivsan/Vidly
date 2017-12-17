@@ -26,6 +26,9 @@ namespace Vidly.Models
         
         public DbSet<Vidly.Models.Cast> Casts { get; set; }
         public DbSet<Vidly.Models.Genre> Genres { get; set; }
+        public DbSet<Vidly.Models.MyCustomer> MyCustomers { get; set; }
+        public DbSet<Vidly.Models.EventLog> Events { get; set; }
+        public DbSet<Vidly.Models.Error> Error { get; set; }        
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

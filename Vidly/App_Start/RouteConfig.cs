@@ -18,6 +18,7 @@ namespace Vidly
             //    "movies/releases/{year}/{genre}", 
             //    new { controller="movies", action="byrelease", year="year", genre="genre"},
             //    constraints: new { year=@"\d{4}", genre=@"[a-z]*"});
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
